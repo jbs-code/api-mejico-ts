@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Méjico</title>
+    <link rel="icon" href="./img/favicon.png" />
+    <link rel="stylesheet" href="./css/settings.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <header class="header">
+            <picture class="header-fondo">
+                <img src="./img/portada.jpg" alt="portada">
+            </picture>
+            <div class="header-title">
+                <h1 class="text-shadow">API-Méjico</h1>
+                <p class="text-shadow">Esta API devuelve diferentes platillos que podrías encontrar en un restaurante
+                    mexicano.</p>
+            </div>
+        </header>
+
+        <div class="description">
+            <div class="endpoints">
+                <h2 class="endpoints-title">Endpoints</h2>
+                <section id="categorias" class="item">
+                    <h2>Categorías</h2>
+                    <p>Con este endpoint obtendrás las categorías disponibles:</p>
+                    <li class="item-url">https://api-mejico.jaimejb.com/categorias?limite=20&desde=0</li>
+                    <p>Parámetros:</p>
+                    <li>limite: Limita el número de resultados (opcional).</li>
+                    <li>desde: Para indicar a partir de cual categoría te interesa obtener resultados (opcional).</li>
+                    <pre class="codigo">
+                        <h3>Respuesta</h3>
+                        <code>
+                            {
+                                "total": 4,
+                                "categorias":
+                                    {
+                                        "_id": "6376e6269b43615a46214fe8",
+                                        "nombre": "ENTRADAS",
+                                        "estado": true,
+                                        "responsable": {
+                                            "_id": "634dfcb27bdd9bc335a569db",
+                                            "nombre": "JaimeDev"
+                                }
+                            }
+                        </code>
+                    </pre>
+                </section>
+                <section id="productos" class="item">
+                    <h2>Productos</h2>
+                    <p>Con este endpoint obtendrás los productos disponibles:</p>
+                    <li class="item-url">https://api-mejico.jaimejb.com/productos?limite=0&desde=0</li>
+                    <p>Parámetros:</p>
+                    <li>limite: Limita el número de resultados (opcional).</li>
+                    <li>desde: Para indicar a partir de cual producto te interesa obtener resultados (opcional).</li>
+                    <pre class="codigo">
+                        <h3>Respuesta</h3>
+                        <code>
+        "total": 24,
+        "productos":
+        {
+            urlImg": {
+                "url": "https://res.cloudinary.com/jaimejb/image/upload/v1669665619/Mejico/rijneblbpab2oac7xxer.jpg",
+                "public_id": "rijneblbpab2oac7xxer"
+            },
+            _id": "63851354f5a042d711d63a61",
+            "nombre": "CREMA DE ELOTE",
+            "categoria": "6376e6269b43615a46214fe8",
+            "descripcion": "Crema con leche evaporada y grano de elote, acompañada con pan o totopos.",
+            "costo": 25,
+            "disponibilidad": true,
+            "responsable": {
+                "_id": "634dfcb27bdd9bc335a569db",
+                "nombre": "JaimeDev"
+            }
+        }
+                        </code>
+                    </pre>
+                </section>
+                <section id="productosCategoria" class="item">
+                    <h2>Productos por Categoría</h2>
+                    <p>Con este endpoint obtendrás los productos de una categoría en específico:</p>
+                    <li class="item-url">
+                        https://api-mejico.jaimejb.com/buscar/productos/<span>nombre_categoria</span>?limite=0&desde=0</li>
+                    <p>Parámetros:</p>
+                    <li>nombre_categoria: Debes poner el nombre de la categoría (entradas, plato fuerte, postres o
+                        bebidas) de los productos que te interesan.</li>
+                    <li>limite: Limita el número de resultados (opcional).</li>
+                    <li>desde: Para indicar a partir de cual producto te interesa obtener resultados (opcional).</li>
+                    <pre class="codigo">
+                        <h3>La respuesta es similar a la búsqueda de productos.</h3>
+                    </pre>
+                </section>
+                <section id="productosPorNombre" class="item">
+                    <h2>Productos por nombre</h2>
+                    <p>Con este endpoint obtendrás los productos que coincidan con el nombre que indiques.</p>
+                    <li class="item-url">https://api-mejico.jaimejb.com/buscar/productos/nombre/<span>nombre_producto</span>
+                    </li>
+                    <p>Parámetros:</p>
+                    <li>nombre_producto: Debes poner el nombre del producto que quieres buscar.</li>
+                    <pre class="codigo">
+                        <h3>La respuesta es similar a la búsqueda de productos.</h3>
+                    </pre>
+                </section>
+
+                <footer class="footer">
+                    <p>
+                        Si quieres revisar el código de esta API, lo puedes encontrar en 
+                        <a href="https://github.com/jbs-code/mejico-api" target="_blank"> GitHub</a>
+                    </p>
+                </footer>
+            </div>
+            <aside class="menu">
+                <ul>
+                    <li><a href="#categorias">Categorías</a></li>
+                    <li><a href="#productos">Productos</a></li>
+                    <li><a href="#productosCategoria">Productos por Categoría</a></li>
+                    <li><a href="#productosPorNombre">Productos por nombre</a></li>
+                </ul>
+            </aside>
+
+        </div>
+
+    </div>
+</body>
+
+</html>
